@@ -3,6 +3,7 @@
 A RESTful backend API for ToDo application, built with Node.js, Express, and MongoDB (Mongoose).
 
 ---
+- **Live Project**: [https://prioritypoint.netlify.app](https://prioritypoint.netlify.app)
 
 ## Repository
 
