@@ -1,7 +1,7 @@
 const express = require('express'); 
 const cors = require('cors');
 const helmet = require('helmet');
-const connectDB = require('./config/db');
+const connectDB = require('./src/config/db.js');
 require('dotenv').config();
 
 const app = express();
@@ -19,8 +19,8 @@ app.use(helmet());
 app.use(express.json()); // extended is not needed here
 
 // Routes
-app.use('/api/auth', require('./routes/auth.js'));
-app.use('/api/tasks', require('./routes/tasks.js'));
+app.use('/api/auth', require('./src/routes/auth.js'));
+app.use('/api/tasks', require('./src/routes/tasks.js'));
 
 const PORT = process.env.PORT || 7001;
 
