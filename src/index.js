@@ -11,9 +11,10 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['https://prioritypoint.netlify.app', 'http://localhost:5173'],
   credentials: true,
 }));
+
 app.use(helmet());
 app.use(express.json()); // extended is not needed here
 
