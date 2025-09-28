@@ -10,8 +10,13 @@ const app = express();
 connectDB();
 
 // Middleware
+// app.use(cors({
+//   origin: ['https://prioritypoint.netlify.app', 'http://localhost:5173', 'https://www.fastcron.com/'],
+//   credentials: true,
+// }));
+
 app.use(cors({
-  origin: ['https://prioritypoint.netlify.app', 'http://localhost:5173', 'https://www.fastcron.com/'],
+  origin:'*',
   credentials: true,
 }));
 
