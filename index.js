@@ -9,14 +9,9 @@ const app = express();
 // Connect Database
 connectDB();
 
-// Middleware
-// app.use(cors({
-//   origin: ['https://prioritypoint.netlify.app', 'http://localhost:5173', 'https://www.fastcron.com/'],
-//   credentials: true,
-// }));
-
+//Middleware
 app.use(cors({
-  origin:'*',
+  origin: ['https://prioritypoint.netlify.app', 'http://localhost:5173'],
   credentials: true,
 }));
 
@@ -26,6 +21,12 @@ app.use(express.json()); // extended is not needed here
 // Routes
 app.use('/api/auth', require('./src/routes/auth.js'));
 app.use('/api/tasks', require('./src/routes/tasks.js'));
+
+
+// Default root route
+app.get('/', (req, res) => {
+    res.status(200).send('The backend is running! Hello, Prem! 🚀');
+});
 
 const PORT = process.env.PORT || 7001;
 
